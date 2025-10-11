@@ -13,7 +13,7 @@ on:
   push:
     branches: [ lazarus ]
     tags: [ "*" ]
-    paths-ignore: [ "README.md", "LICENSE" ]
+    paths-ignore: [ "README.md", "LICENSE", "CHANGELOG.md", ".github/cliff.toml" ]
 
   pull_request:
     branches: [ lazarus ]
