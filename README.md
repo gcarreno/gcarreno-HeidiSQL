@@ -8,7 +8,7 @@
 [![Downloads](https://img.shields.io/github/downloads/HeidiSQL/HeidiSQL/total?logo=github)](https://github.com/HeidiSQL/HeidiSQL/releases)
 
 
-> [NOTE]
+> [!NOTE]
 > You'll need to edit the `Build Status` banner above, to reflect your repo, if or when, you get the workflows going.
 
 This is the code base for compiling HeidiSQL on non-Windows platforms, such as Linux. MacOS is probably an option in the future but not yet tried out.
