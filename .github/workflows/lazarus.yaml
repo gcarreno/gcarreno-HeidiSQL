@@ -1,0 +1,65 @@
+name: HeidiSQL
+
+defaults:
+    run:
+        shell: bash
+
+permissions:
+  contents: write
+
+
+on:
+
+  push:
+    branches: [ lazarus ]
+    tags: [ "*" ]
+    paths-ignore: [ "README.md", "LICENSE" ]
+
+  pull_request:
+    branches: [ lazarus ]
+
+jobs:
+
+    build:
+        runs-on: ${{ matrix.operating-system }}
+        strategy:
+            fail-fast: false
+            matrix:
+                operating-system: [ubuntu-latest, windows-latest]
+                lazarus-versions: ["stable"]
+
+        steps:
+        - name: Checkout source code
+          uses: actions/checkout@v4
+
+        - name: Install Lazarus
+          uses: gcarreno/setup-lazarus@v3
+          with:
+            lazarus-version: ${{ matrix.lazarus-versions }}
+            with-cache: false
+
+        - name: Build the Main Application (Windows)
+          if: ${{ matrix.operating-system == 'windows-latest' }}
+          run: |
+            lazbuild -B --bm=Release "heidisql.lpi"
+            mv out/heidisql.exe out/heidisql-fp-win64-v12.12.1.exe
+
+        - name: Build the Main Application (Ubuntu)
+          if: ${{ matrix.operating-system == 'ubuntu-latest' }}
+          run: |
+            echo Building with GTK2
+            lazbuild -B --bm=Release "heidisql.lpi"
+            mv out/heidisql out/heidisql-fp-lin64-gtk-v12.12.1
+            echo Installing Qt5 Dev
+            sudo apt update
+            sudo apt install libqt5pas-dev -y
+            echo Building with Qt5
+            lazbuild -B --bm=Release --ws=qt5 "heidisql.lpi"
+            mv out/heidisql out/heidisql-fp-lin64-qt-v12.12.1
+
+        - name: Upload binaries
+          if: ${{ matrix.lazarus-versions == 'stable' }}
+          uses: actions/upload-artifact@v4
+          with:
+            name: ${{ matrix.operating-system }}
+            path: out/heidisql-*
