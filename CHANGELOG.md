@@ -14,6 +14,8 @@ Notable changes up to the last release.
 
 ### ⚙️ Miscellaneous Tasks
 
+- Removing trigger for cliff and changelog - ([b50ed62](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/b50ed62762b54079cfafa78ff26b6cfdbddfeae7))
+- `cliff.toml` to generate `CHANGELOG.md` - ([2e4d925](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/2e4d9253266cb40d2431eacce21ddf6c406fd228))
 - Renaming the workflow - ([227ffe2](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/227ffe28ccd8e66e0aad739daa85f76a38a76cb8))
 - Adding first attempt at workflow - ([edb0a22](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/edb0a2277d9a90efb245583e6455586ccc11a5c5))
 - Build modes, new output folders - ([e48bf11](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/e48bf11be1836f8035eb9eab527b5461d6a3e027))
