@@ -8,6 +8,9 @@
 [![Downloads](https://img.shields.io/github/downloads/HeidiSQL/HeidiSQL/total?logo=github)](https://github.com/HeidiSQL/HeidiSQL/releases)
 
 
+> [NOTE]
+> You'll need to edit the `Build Status` banner above, to reflect your repo, if or when, you get the workflows going.
+
 This is the code base for compiling HeidiSQL on non-Windows platforms, such as Linux. MacOS is probably an option in the future but not yet tried out.
 
 I converted the sources from the master branch, using Lazarus 3.8 and FreePascal 3.2.2. I left away some Windows-only stuff which won't ever work on other platforms, such as some Windows message handlings, and ADO driver usage.
