@@ -1,11 +1,11 @@
 # HeidiSQL Lazarus/FreePascal port
-[![Build Status](https://github.com/gcarreno/gcarreno-HeidiSQL/actions/workflows/lazarus.yaml/badge.svg?branch=lazarus)](https://github.com/HeidiSQL/HeidiSQL/actions)
-[![Supports Windows](https://img.shields.io/badge/support-Windows-blue?logo=Windows)](https://github.com/HeidiSQL/HeidiSQL/releases/latest)
-[![Supports Linux](https://img.shields.io/badge/support-Linux-yellow?logo=Linux)](https://github.com/HeidiSQL/HeidiSQL/releases/latest)
-[![Supports macOS](https://img.shields.io/badge/support-macOS-black?logo=macOS)](https://github.com/HeidiSQL/HeidiSQL/releases/latest)
-[![License](https://img.shields.io/github/license/HeidiSQL/HeidiSQL?logo=github)](https://github.com/HeidiSQL/HeidiSQL/blob/main/LICENSE)
-[![Latest Release](https://img.shields.io/github/v/release/HeidiSQL/HeidiSQL?label=latest%20release&logo=github)](https://github.com/HeidiSQL/HeidiSQL/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/HeidiSQL/HeidiSQL/total?logo=github)](https://github.com/HeidiSQL/HeidiSQL/releases)
+[![Build Status](https://github.com/gcarreno/gcarreno-HeidiSQL/actions/workflows/lazarus.yaml/badge.svg?branch=lazarus)](https://github.com/gcarreno/gcarreno-HeidiSQL/actions)
+[![Supports Windows](https://img.shields.io/badge/support-Windows-blue?logo=Windows)](https://github.com/gcarreno/gcarreno-HeidiSQL/releases/latest)
+[![Supports Linux](https://img.shields.io/badge/support-Linux-yellow?logo=Linux)](https://github.com/gcarreno/gcarreno-HeidiSQL/releases/latest)
+[![Supports macOS](https://img.shields.io/badge/support-macOS-black?logo=macOS)](https://github.com/gcarreno/gcarreno-HeidiSQL/releases/latest)
+[![License](https://img.shields.io/github/license/gcarreno/gcarreno-HeidiSQL?logo=github)](https://github.com/gcarreno/gcarreno-HeidiSQL/blob/main/LICENSE)
+[![Latest Release](https://img.shields.io/github/v/release/gcarreno/gcarreno-HeidiSQL?label=latest%20release&logo=github)](https://github.com/gcarreno/gcarreno-HeidiSQL/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/gcarreno/gcarreno-HeidiSQL/total?logo=github)](https://github.com/gcarreno/gcarreno-HeidiSQL/releases)
 
 
 > [!NOTE]
