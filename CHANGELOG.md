@@ -2,7 +2,14 @@
 
 Notable changes up to the last release.
 
-## [unreleased]
+## [12.12.1.2](https://github.com/gcarreno/gcarreno-HeidiSQL/compare/v12.12.1.1..v12.12.1.2) - 2025-10-12
+
+### ⚙️ Miscellaneous Tasks
+
+- Fix path for release files - ([ba83158](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/ba831580feef242aa25c8db288e842f0ef92f5e3))
+
+
+## [12.12.1.1] - 2025-10-11
 
 ### 📚 Documentation
 
@@ -14,6 +21,8 @@ Notable changes up to the last release.
 
 ### ⚙️ Miscellaneous Tasks
 
+- Add auto release - ([8f98ecf](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/8f98ecfafc6f50b8e25e7e4df11103bc89eedaad))
+- Updated changelog - ([91643c0](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/91643c008e9e0d9ba9a3fa02d7fa4e3e4a30244b))
 - Removing trigger for cliff and changelog - ([b50ed62](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/b50ed62762b54079cfafa78ff26b6cfdbddfeae7))
 - `cliff.toml` to generate `CHANGELOG.md` - ([2e4d925](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/2e4d9253266cb40d2431eacce21ddf6c406fd228))
 - Renaming the workflow - ([227ffe2](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/227ffe28ccd8e66e0aad739daa85f76a38a76cb8))
