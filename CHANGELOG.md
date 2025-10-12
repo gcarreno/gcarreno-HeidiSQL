@@ -2,6 +2,14 @@
 
 Notable changes up to the last release.
 
+## [12.12.1.3](https://github.com/gcarreno/gcarreno-HeidiSQL/compare/v12.12.1.2..v12.12.1.3) - 2025-10-12
+
+### ⚙️ Miscellaneous Tasks
+
+- Better organisation of the release steps - ([51005bb](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/51005bb928d1d08d87a206e00dcb943372fe8637))
+- Updated changelog - ([94cbebf](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/94cbebf6abc6f988770aa348ec531d7b53e399fc))
+
+
 ## [12.12.1.2](https://github.com/gcarreno/gcarreno-HeidiSQL/compare/v12.12.1.1..v12.12.1.2) - 2025-10-12
 
 ### ⚙️ Miscellaneous Tasks
