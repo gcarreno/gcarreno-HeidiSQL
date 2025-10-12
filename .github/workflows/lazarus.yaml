@@ -38,26 +38,26 @@ jobs:
             lazarus-version: ${{ matrix.lazarus-versions }}
             with-cache: false
 
-        - name: Build the Main Application (Windows)
+        - name: Build HeidiSQL (Windows)
           if: ${{ matrix.operating-system == 'windows-latest' }}
           run: |
             lazbuild -B --bm=Release "heidisql.lpi"
-            mv out/heidisql.exe out/heidisql-fp-win64-v12.12.1.exe
+            mv out/heidisql.exe out/heidisql-fp-win64.exe
 
-        - name: Build the Main Application (Ubuntu)
+        - name: Build HeidiSQL (Ubuntu)
           if: ${{ matrix.operating-system == 'ubuntu-latest' }}
           run: |
             echo Building with GTK2
             lazbuild -B --bm=Release "heidisql.lpi"
             chmod +x out/heidisql
-            mv out/heidisql out/heidisql-fp-lin64-gtk-v12.12.1
+            mv out/heidisql out/heidisql-fp-lin64-gtk
             echo Installing Qt5 Dev
             sudo apt update
             sudo apt install libqt5pas-dev -y
             echo Building with Qt5
             lazbuild -B --bm=Release --ws=qt5 "heidisql.lpi"
             chmod +x out/heidisql
-            mv out/heidisql out/heidisql-fp-lin64-qt-v12.12.1
+            mv out/heidisql out/heidisql-fp-lin64-qt
 
         - name: Upload binaries
           if: ${{ matrix.lazarus-versions == 'stable' }}
@@ -97,19 +97,31 @@ jobs:
             - name: List files
               run: ls -alF *-latest
 
-            - name: Create release archives
+
+            - name: Create folders
+              run: mkdir -p windows linux-gtk linux-qt
+
+            - name: Move binaries
               run: |
-                mkdir -p windows linux-gtk linux-qt
-                mv windows-latest/heidisql-*.exe windows/heidisql.exe
-                mv ubuntu-latest/heidisql-fp-lin64-gtk* linux-gtk/heidisql
-                mv ubuntu-latest/heidisql-fp-lin64-qt* linux-qt/heidisql
+                mv windows-latest/heidisql-fp-win64.exe windows/heidisql.exe
+                mv  ubuntu-latest/heidisql-fp-lin64-gtk linux-gtk/heidisql
+                mv  ubuntu-latest/heidisql-fp-lin64-qt  linux-qt/heidisql
+
+            - name: Create release archives (Windows)
+              run: |
                 cd windows
                 cp -r ../out/locale ../out/*.ini ../out/*.dll .
                 zip -r ../heidisql-fp-win64-${{ env.tag }}.zip *
-                cd ../linux-gtk
+
+            - name: Create release archives (Linux GTK)
+              run: |
+                cd linux-gtk
                 cp -r ../out/locale ../out/*.ini .
                 tar -zcvf ../heidisql-fp-lin64-gtk-${{ env.tag }}.tgz *
-                cd ../linux-qt
+
+            - name: Create release archives (Linux QT)
+              run: |
+                cd linux-qt
                 cp -r ../out/locale ../out/*.ini .
                 tar -zcvf ../heidisql-fp-lin64-qt-${{ env.tag }}.tgz *
 

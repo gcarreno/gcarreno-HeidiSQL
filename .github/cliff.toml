@@ -77,7 +77,7 @@ body = """
 footer = """
 > [!NOTE]
 >
-> For a list of all the changes up to date, please read [CHANGELOG.md](<REPO>/blob/main/CHANGELOG.md).
+> For a list of all the changes up to date, please read [CHANGELOG.md](<REPO>/blob/lazarus/CHANGELOG.md).
 """
 # Remove leading and trailing whitespaces from the changelog's body.
 trim = true
