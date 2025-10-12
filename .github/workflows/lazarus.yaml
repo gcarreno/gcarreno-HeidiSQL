@@ -126,8 +126,7 @@ jobs:
                 name: HeidiSQL Linux ${{ env.tag }}
                 body: ${{ steps.git-cliff.outputs.content }}
                 files: |
-                  windows/*.zip
-                  linux-gtk/*.tgz
-                  linux-qt/*.tgz
+                  *.zip
+                  *.tgz
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
