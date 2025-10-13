@@ -47,7 +47,7 @@ deb-package: run-tx
 	cp -v README.md LICENSE deb/usr/share/doc/heidisql
 	mkdir -p dist
 	rm -vf dist/*.deb
-	fpm -s dir -t deb -n heidisql -v ${VERSION} \
+	fpm -s dir -t deb -n heidisql -v ${tag} \
 	  -p dist \
 	  --verbose \
 	  --deb-custom-control deb-control.txt \
@@ -64,7 +64,7 @@ tar-gtk2: run-tx
 	cp -v extra/ini/*.ini tar
 	cp -v out/gtk2/heidisql tar
 	chmod +x tar/heidisql
-	cd tar && tar -zcvf ../dist/heidisql-gtk2-$(VERSION).tgz *
+	cd tar && tar -zcvf ../dist/heidisql-gtk2-$(tag).tgz *
 
 tar-qt5: run-tx
 	@echo "=== Creating QT5 archive"
@@ -76,4 +76,4 @@ tar-qt5: run-tx
 	cp -v extra/ini/*.ini tar
 	cp -v out/qt5/heidisql tar
 	chmod +x tar/heidisql
-	cd tar && tar -zcvf ../dist/heidisql-qt5-$(VERSION).tgz *
+	cd tar && tar -zcvf ../dist/heidisql-qt5-$(tag).tgz *
