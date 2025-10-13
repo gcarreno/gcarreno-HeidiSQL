@@ -2,6 +2,14 @@
 
 Notable changes up to the last release.
 
+## [12.12.1.6](https://github.com/gcarreno/gcarreno-HeidiSQL/compare/v12.12.1.5..v12.12.1.6) - 2025-10-13
+
+### ⚙️ Miscellaneous Tasks
+
+- Forgot executable flags - ([47da532](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/47da53210ac50fa80d5f69c4355a5733389dfb33))
+- Updating changelog and bumping version - ([b7ad2c7](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/b7ad2c7252824b08c6eee014cfbdc05f7827cdea))
+
+
 ## [12.12.1.5](https://github.com/gcarreno/gcarreno-HeidiSQL/compare/v12.12.1.4..v12.12.1.5) - 2025-10-13
 
 ### ⚙️ Miscellaneous Tasks
