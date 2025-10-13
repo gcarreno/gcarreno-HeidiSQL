@@ -25,11 +25,13 @@ run-tx:
 heidisql-gtk2:
 	@echo "=== Building GTK2"
 	$(LAZBUILD) $(OPTS) $(LPI)
+	mkdir -p out/gtk2
 	mv -v $(BIN) $(BINGTK)
 
 heidisql-qt5:
 	@echo "=== Building QT5"
 	$(LAZBUILD) $(OPTS) $(OPTSQT) $(LPI)
+	mkdir -p out/qt5
 	mv -v $(BIN) $(BINQT)
 
 deb-package: run-tx
