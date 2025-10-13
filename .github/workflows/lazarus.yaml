@@ -102,6 +102,12 @@ jobs:
                 ls -alF out/gtk2
                 ls -alF out/qt5
 
+            - name: Install FPM
+              run: |
+                sudo apt-get update
+                sudo apt-get install -y ruby ruby-dev
+                sudo gem install --no-document fpm
+
             - name: Create release archives (Linux GTK)
               run: make tar-gtk2
               env:
