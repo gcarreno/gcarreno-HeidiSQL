@@ -51,6 +51,11 @@ jobs:
             name: ${{ matrix.operating-system }}-GTK
             path: out/gtk2/heidisql
 
+        - name: Getting libqt5pas-dev
+          run: |
+            sudo apt update
+            sudo apt install -y libqt5pas-dev
+
         - name: Build HeidiSQL (Ubuntu QT)
           if: ${{ matrix.operating-system == 'ubuntu-latest' }}
           run: |
