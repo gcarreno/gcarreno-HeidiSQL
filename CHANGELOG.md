@@ -2,6 +2,31 @@
 
 Notable changes up to the last release.
 
+## [12.12.1.5](https://github.com/gcarreno/gcarreno-HeidiSQL/compare/v12.12.1.4..v12.12.1.5) - 2025-10-13
+
+### ⚙️ Miscellaneous Tasks
+
+- Forgot to install ruby gem fpm - ([5708645](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/57086450f4e0947c099085255f67c90c6fb6d94d))
+
+
+## [12.12.1.4](https://github.com/gcarreno/gcarreno-HeidiSQL/compare/v12.12.1.3..v12.12.1.4) - 2025-10-13
+
+### 🐛 Bug Fixes
+
+- Forgot to create folders - ([0d7e74d](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/0d7e74decfb9964397f11ce90dd2ffa5c8be6deb))
+
+### 📚 Documentation
+
+- *(README)* Banner point to this repo - ([d976608](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/d976608e5b38548ec39fd54b59a3c38092527958))
+
+### ⚙️ Miscellaneous Tasks
+
+- Forgot to install package `libqt5pas-dev` - ([d1485e1](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/d1485e120153a701fb4fe61712c47e94b3bd8838))
+- Adding `Makefile` and necessary changes - ([4271377](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/42713770f158c2a758907f0f4029462a70fea765))
+- Updating changelog - ([3a34b76](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/3a34b76965e92fcabe2e712827777cf5442679c5))
+- Bumping version for next release - ([5a71158](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/5a71158b3c21f559244952d4edf616f20d081c22))
+
+
 ## [12.12.1.3](https://github.com/gcarreno/gcarreno-HeidiSQL/compare/v12.12.1.2..v12.12.1.3) - 2025-10-12
 
 ### ⚙️ Miscellaneous Tasks

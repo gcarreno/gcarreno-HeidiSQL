@@ -26,7 +26,7 @@
       <MajorVersionNr Value="12"/>
       <MinorVersionNr Value="12"/>
       <RevisionNr Value="1"/>
-      <BuildNr Value="5"/>
+      <BuildNr Value="6"/>
       <Attributes pvaPreRelease="True"/>
     </VersionInfo>
     <BuildModes>
