@@ -1,7 +1,14 @@
 ## Project specific
 /bin
+/dist
+/deb
+/rpm
+/tar
+/zip
 /out/heidisql
 /out/heidisql.exe
+/out/gtk2
+/out/qt5
 # Compiled translations
 /out/locale/heidisql.*.mo
 

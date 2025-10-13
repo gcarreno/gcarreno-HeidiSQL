@@ -38,33 +38,31 @@ jobs:
             lazarus-version: ${{ matrix.lazarus-versions }}
             with-cache: false
 
-        - name: Build HeidiSQL (Windows)
-          if: ${{ matrix.operating-system == 'windows-latest' }}
-          run: |
-            lazbuild -B --bm=Release "heidisql.lpi"
-            mv out/heidisql.exe out/heidisql-fp-win64.exe
-
-        - name: Build HeidiSQL (Ubuntu)
+        - name: Build HeidiSQL (Ubuntu GTK)
           if: ${{ matrix.operating-system == 'ubuntu-latest' }}
           run: |
             echo Building with GTK2
-            lazbuild -B --bm=Release "heidisql.lpi"
-            chmod +x out/heidisql
-            mv out/heidisql out/heidisql-fp-lin64-gtk
-            echo Installing Qt5 Dev
-            sudo apt update
-            sudo apt install libqt5pas-dev -y
-            echo Building with Qt5
-            lazbuild -B --bm=Release --ws=qt5 "heidisql.lpi"
-            chmod +x out/heidisql
-            mv out/heidisql out/heidisql-fp-lin64-qt
+            make heidisql-gtk2
 
-        - name: Upload binaries
+        - name: Upload binaries GTK
           if: ${{ matrix.lazarus-versions == 'stable' }}
           uses: actions/upload-artifact@v4
           with:
-            name: ${{ matrix.operating-system }}
-            path: out/heidisql-*
+            name: ${{ matrix.operating-system }}-GTK
+            path: out/gtk2/heidisql
+
+        - name: Build HeidiSQL (Ubuntu QT)
+          if: ${{ matrix.operating-system == 'ubuntu-latest' }}
+          run: |
+            echo Building with QT5
+            make heidisql-qt5
+
+        - name: Upload binaries QT
+          if: ${{ matrix.lazarus-versions == 'stable' }}
+          uses: actions/upload-artifact@v4
+          with:
+            name: ${{ matrix.operating-system }}-QT
+            path: out/qt5/heidisql
 
     release:
         if: contains(github.ref_type, 'tag')
@@ -82,48 +80,37 @@ jobs:
             - name: Set env
               run: echo "tag=${{ github.ref_name }}" >> "$GITHUB_ENV"
 
-            - name: Download Ubuntu
+            - name: Download Ubuntu GTK
               uses: actions/download-artifact@v4
               with:
-                name: ubuntu-latest
-                path: ubuntu-latest
+                name: ubuntu-latest-GTK
+                path: out/gtk2
 
-            - name: Download WIndows
+            - name: Download Ubuntu QT
               uses: actions/download-artifact@v4
               with:
-                name: windows-latest
-                path: windows-latest
+                name: ubuntu-latest-QT
+                path: out/qt5
 
             - name: List files
-              run: ls -alF *-latest
-
-
-            - name: Create folders
-              run: mkdir -p windows linux-gtk linux-qt
-
-            - name: Move binaries
               run: |
-                mv windows-latest/heidisql-fp-win64.exe windows/heidisql.exe
-                mv  ubuntu-latest/heidisql-fp-lin64-gtk linux-gtk/heidisql
-                mv  ubuntu-latest/heidisql-fp-lin64-qt  linux-qt/heidisql
-
-            - name: Create release archives (Windows)
-              run: |
-                cd windows
-                cp -r ../out/locale ../out/*.ini ../out/*.dll .
-                zip -r ../heidisql-fp-win64-${{ env.tag }}.zip *
+                ls -alF out/gtk2
+                ls -alF out/qt5
 
             - name: Create release archives (Linux GTK)
-              run: |
-                cd linux-gtk
-                cp -r ../out/locale ../out/*.ini .
-                tar -zcvf ../heidisql-fp-lin64-gtk-${{ env.tag }}.tgz *
+              run: make tar-gtk2
+              env:
+                VERSION: ${{ env.tag }}
+
+            - name: Create debian package
+              run: make deb-package
+              env:
+                VERSION: ${{ env.tag }}
 
             - name: Create release archives (Linux QT)
-              run: |
-                cd linux-qt
-                cp -r ../out/locale ../out/*.ini .
-                tar -zcvf ../heidisql-fp-lin64-qt-${{ env.tag }}.tgz *
+              run: make tar-qt5
+              env:
+                VERSION: ${{ env.tag }}
 
             - name: Generate Release Notes
               id: git-cliff
@@ -137,8 +124,6 @@ jobs:
               with:
                 name: HeidiSQL Linux ${{ env.tag }}
                 body: ${{ steps.git-cliff.outputs.content }}
-                files: |
-                  *.zip
-                  *.tgz
+                files: dist/*
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
