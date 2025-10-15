@@ -102,9 +102,11 @@ jobs:
                 ls -alF out/gtk2
                 ls -alF out/qt5
 
+            - name: Install gettext
+              run: sudo apt install -y gettext
+
             - name: Install FPM
-              run: |
-                sudo gem install --no-document fpm
+              run: sudo gem install --no-document fpm
 
             - name: Pull from transifex
               uses: transifex/cli-action@v2
