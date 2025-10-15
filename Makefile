@@ -8,9 +8,9 @@ BIN = out/heidisql
 BINGTK = out/gtk2/heidisql
 BINQT = out/qt5/heidisql
 
-.PHONY: all clean run-tx heidisql-gtk2 heidisql-qt5 deb-package tar-gtk2 tar-qt5
+.PHONY: all clean run-tx build-mo heidisql-gtk2 heidisql-qt5 deb-package tar-gtk2 tar-qt5
 
-all: clean run-tx heidisql-gtk2 heidisql-qt5 deb-package tar-gtk2 tar-qt5
+all: clean run-tx build-mo heidisql-gtk2 heidisql-qt5 deb-package tar-gtk2 tar-qt5
 
 clean:
 	@echo "=== Cleaning"
@@ -19,8 +19,16 @@ clean:
 	@rm -rf deb rpm tar dist
 
 run-tx:
-	@echo "=== Running tx"
-# Need to run tx here!!
+	@echo "=== Pulling from transifex"
+	./extra/internationalization/tx pull -a
+
+build-mo:
+	@echo "=== Building MO files"
+	@for file in $(shell find ./extra/locale -iname '*.po'); do \
+	  lang=`echo $${file} | cut -d'/' -f4`; \
+	  echo "Building MO file for $${lang}"; \
+	  msgfmt -o "extra/locale/heidisql.$${lang}.mo" $${file}; \
+	done
 
 heidisql-gtk2:
 	@echo "=== Building GTK2"
