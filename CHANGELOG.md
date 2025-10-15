@@ -2,6 +2,15 @@
 
 Notable changes up to the last release.
 
+## [12.12.1.9](https://github.com/gcarreno/gcarreno-HeidiSQL/compare/v12.12.1.8..v12.12.1.9) - 2025-10-15
+
+### ⚙️ Miscellaneous Tasks
+
+- Fix wrong quote on `deb-control.txt` - ([d01062a](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/d01062a07e050f7de54089d4748afb65188a4053))
+- Bumping version to 12.12.1.9 - ([8ad49ac](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/8ad49ac71816c7efb3b824dc01cc67f84c9ff9e3))
+- Updating changelog - ([0c860c2](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/0c860c2c3431250fb6ef84290eb344f2ef6b7f5b))
+
+
 ## [12.12.1.8](https://github.com/gcarreno/gcarreno-HeidiSQL/compare/v12.12.1.7..v12.12.1.8) - 2025-10-15
 
 ### ⚙️ Miscellaneous Tasks
