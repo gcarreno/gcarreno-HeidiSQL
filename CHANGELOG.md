@@ -2,6 +2,19 @@
 
 Notable changes up to the last release.
 
+## [12.12.1.7](https://github.com/gcarreno/gcarreno-HeidiSQL/compare/v12.12.1.6..v12.12.1.7) - 2025-10-15
+
+### ⚙️ Miscellaneous Tasks
+
+- Adding transifex pull to the workflow - ([bcaf255](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/bcaf25510bcf1e21df8a9be22d394ff1a530acf8))
+- `run-tx` and `build-mo` recipes on `Makefile` - ([2f73f27](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/2f73f27576ba47b603f1e37102bff287f9eff3a4))
+- New location of the `.mo` files - ([7553782](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/755378250279042d231d592c173f4f64184cd22c))
+- Something fishy just happend... - ([375fb29](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/375fb2921af06690b73753334eb341d0afbfc73a))
+- Removing scripts for `.tar.gz` and `.deb` - ([927ceae](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/927ceae664346c7cd508ad3bea4b3f4ef692ef9b))
+- Using the already existing `tag` env var - ([8f037b0](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/8f037b04f43c56cf08ee43c290e98e13d2a147f4))
+- Update changlog and bump version - ([bb1758e](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/bb1758e9d27cec9bd0c9f799742ed75a548fe03d))
+
+
 ## [12.12.1.6](https://github.com/gcarreno/gcarreno-HeidiSQL/compare/v12.12.1.5..v12.12.1.6) - 2025-10-13
 
 ### ⚙️ Miscellaneous Tasks
