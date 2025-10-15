@@ -2,6 +2,15 @@
 
 Notable changes up to the last release.
 
+## [12.12.1.8](https://github.com/gcarreno/gcarreno-HeidiSQL/compare/v12.12.1.7..v12.12.1.8) - 2025-10-15
+
+### ⚙️ Miscellaneous Tasks
+
+- Looks like `msgfmt` needs package `gettext` - ([d37026f](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/d37026fe5d486d68c1891f5196833ce117843d89))
+- Bumped version to 12.12.1.7 - ([1956bd5](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/1956bd5e1409b15da992631190925bfa5613ee66))
+- Update change log - ([731c028](https://github.com/gcarreno/gcarreno-HeidiSQL/commit/731c0280f9ac3525c5854cdd81b7f0607367376f))
+
+
 ## [12.12.1.7](https://github.com/gcarreno/gcarreno-HeidiSQL/compare/v12.12.1.6..v12.12.1.7) - 2025-10-15
 
 ### ⚙️ Miscellaneous Tasks
