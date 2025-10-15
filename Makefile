@@ -42,7 +42,7 @@ heidisql-qt5:
 	mkdir -p out/qt5
 	mv -v $(BIN) $(BINQT)
 
-deb-package: run-tx
+deb-package: build-mo
 	@echo "=== Creating debian package"
 	rm -vrf deb
 	cp -R package-skeleton deb
@@ -62,7 +62,7 @@ deb-package: run-tx
 	  --deb-no-default-config-files \
 	  ./deb/=/
 
-tar-gtk2: run-tx
+tar-gtk2: build-mo
 	@echo "=== Creating GTK2 archive"
 	rm -vrf tar
 	mkdir -p tar/locale dist
@@ -74,7 +74,7 @@ tar-gtk2: run-tx
 	chmod +x tar/heidisql
 	cd tar && tar -zcvf ../dist/heidisql-gtk2-$(tag).tgz *
 
-tar-qt5: run-tx
+tar-qt5: build-mo
 	@echo "=== Creating QT5 archive"
 	rm -vrf tar
 	mkdir -p tar/locale dist
